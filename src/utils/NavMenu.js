@@ -1,27 +1,27 @@
 let NavMenu = [
   {
-    title: "Dex",
+    title: "Swap",
     hasSubMenu: true,
     iconImg: "/images/sidebar-icons/home.svg",
     route: "/dex",
     subMenus: [
-      { label: "Axis Swap", link: "/axis-swap" },
-      { label: "Gasless Swap", link: "/gasless-swap" },
-      { label: "Liquidity Pools", link: "/liquidty-pools" },
+      { label: "Dee Swap", link: "/axis-swap" },
+      // { label: "Gasless Swap", link: "/gasless-swap" },
+      // { label: "Liquidity Pools", link: "/liquidty-pools" },
     ],
   },
-  {
-    title: "LaunchPad",
-    hasSubMenu: true,
-    iconImg: "/images/sidebar-icons/rocket.svg",
-    route: "/launch-pad",
-    subMenus: [
-      { label: "Create LBP", link: "/axis-swap" },
-      { label: "Create Presale", link: "/gasless-swap" },
-      { label: "Live Sales", link: "/LiquidityPools" },
-      { label: "Leaderboard", link: "/LiquidityPools" },
-    ],
-  },
+  // {
+  //   title: "LaunchPad",
+  //   hasSubMenu: true,
+  //   iconImg: "/images/sidebar-icons/rocket.svg",
+  //   route: "/launch-pad",
+  //   subMenus: [
+  //     { label: "Create LBP", link: "/axis-swap" },
+  //     { label: "Create Presale", link: "/gasless-swap" },
+  //     { label: "Live Sales", link: "/LiquidityPools" },
+  //     { label: "Leaderboard", link: "/LiquidityPools" },
+  //   ],
+  // },
   {
     title: "Staking",
     hasSubMenu: true,
@@ -33,7 +33,7 @@ let NavMenu = [
     ],
   },
   {
-    title: "Dao",
+    title: "Bridge",
     hasSubMenu: true,
     iconImg: "/images/sidebar-icons/dao.svg",
     route: "/dao",
@@ -42,40 +42,40 @@ let NavMenu = [
       { label: "Create Dao", link: "/gasless-swap" },
     ],
   },
-  {
-    title: "Future",
-    hasSubMenu: true,
-    iconImg: "/images/sidebar-icons/future.svg",
-    route: "/future",
-    subMenus: [
-      { label: "Trade", link: "/axis-swap" },
-      { label: "Liquidity Pools", link: "/gasless-swap" },
-    ],
-  },
-  {
-    title: "Options",
-    hasSubMenu: true,
-    iconImg: "/images/sidebar-icons/options.svg",
-    route: "/options",
-    subMenus: [
-      { label: "Trade", link: "/axis-swap" },
-      { label: "Liquidity Pools", link: "/LiquidityPools" },
-    ],
-  },
-  {
-    title: "Lending & Borrowing",
-    hasSubMenu: false,
-    iconImg: "/images/sidebar-icons/lending.svg",
-    route: "/lending-and-borrowing",
-    subMenus: [],
-  },
-  {
-    title: "Yield Aggregator",
-    hasSubMenu: false,
-    iconImg: "/images/sidebar-icons/yield.svg",
-    route: "/yield-aggregator",
-    subMenus: [],
-  },
+  // {
+  //   title: "Future",
+  //   hasSubMenu: true,
+  //   iconImg: "/images/sidebar-icons/future.svg",
+  //   route: "/future",
+  //   subMenus: [
+  //     { label: "Trade", link: "/axis-swap" },
+  //     { label: "Liquidity Pools", link: "/gasless-swap" },
+  //   ],
+  // },
+  // {
+  //   title: "Options",
+  //   hasSubMenu: true,
+  //   iconImg: "/images/sidebar-icons/options.svg",
+  //   route: "/options",
+  //   subMenus: [
+  //     { label: "Trade", link: "/axis-swap" },
+  //     { label: "Liquidity Pools", link: "/LiquidityPools" },
+  //   ],
+  // },
+  // {
+  //   title: "Lending & Borrowing",
+  //   hasSubMenu: false,
+  //   iconImg: "/images/sidebar-icons/lending.svg",
+  //   route: "/lending-and-borrowing",
+  //   subMenus: [],
+  // },
+  // {
+  //   title: "Yield Aggregator",
+  //   hasSubMenu: false,
+  //   iconImg: "/images/sidebar-icons/yield.svg",
+  //   route: "/yield-aggregator",
+  //   subMenus: [],
+  // },
 
   {
     title: "NFTs",
@@ -85,7 +85,7 @@ let NavMenu = [
     subMenus: [],
   },
   {
-    title: "Portfolio",
+    title: "BlockChain",
     hasSubMenu: false,
     iconImg: "/images/sidebar-icons/portfolio.svg",
     route: "/portfolio",

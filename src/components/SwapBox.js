@@ -36,13 +36,13 @@ const SwapBox = ({ title }) => {
     {
       price: "499.929494",
       balance: "999.855d86311 BNB",
-      coin: "BNB",
+      coin: "Dee",
       icon: "/images/swap-page-icons/bnbcoin.png",
     },
     {
       price: "33302.8",
       balance: "999.855d86311 AXIS",
-      coin: "AXIS",
+      coin: "Deelance",
       icon: "/images/swap-page-icons/axiscoin.png",
     },
   ]);
@@ -52,7 +52,7 @@ const SwapBox = ({ title }) => {
   console.log(showSwap);
   return (
     <div
-      className={`${showSwap ? "flex flex-col" : "hidden"} sm:flex flex-col`}
+      className={`${showSwap ? "flex flex-col" : "hidden"} sm:flex flex-col max-w-xl`}
     >
       <div className="bg-white rounded-lg px-3 py-4 z-50  relative">
         {/* <div className="absolute right-[8%] sm:right-[46%] -bottom-[20px] ml-2 h-10 w-10 flex justify-center items-center bg-gradient-to-tr from-[#ACFFB9]  to-[#11FF37] rotate-158.2 rounded-full">
@@ -114,7 +114,8 @@ const SwapBox = ({ title }) => {
           </div>
         </div>
         <div className="flex justify-between  mb-3">
-          <div className="flex font-bold flex-wrap font-moment text-black">
+          <div className="flex font-bold items-center flex-wrap font-moment text-black">
+            From:
             <div
               className="p-2 h-9 text-base rounded-full bg-[#F3F3F3] flex items-center font-moment font-normal cursor-pointer "
               onClick={() => setSelectTokenShow(true)}

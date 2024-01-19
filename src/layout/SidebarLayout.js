@@ -29,7 +29,7 @@ function SidebarLayout({ children }) {
           <header className="px-4 pt-4 pb-6 flex items-center justify-between">
             <Link
               href="/"
-              className="h-[46px] w-[46px] relative flex"
+              className="h-[100px] w-[100px] relative flex"
               onClick={() => setActiveMenu(null)}
             >
               <Image

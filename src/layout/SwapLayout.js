@@ -1,13 +1,13 @@
-import GasPrice from "components/GasPrice";
-import SwapGraphBox from "components/SwapGraphBox";
-import Wrapper from "components/Wrapper";
+// import GasPrice from "components/GasPrice";
+// import SwapGraphBox from "components/SwapGraphBox";
+// import Wrapper from "components/Wrapper";
 import React, { createContext, useState } from "react";
 
 export const MYContext = createContext(true);
 function SwapLayout({ children }) {
   let [showSwap, setShowSwap] = useState(true);
   return (
-    <div className="grid grid-cols-1 md:grid-cols-5 w-full gap-1 p-1 ">
+    <div className="flex justify-center items-center  mx-auto p-1 h-[100vh] ">
 
       <MYContext.Provider value={{ showSwap, setShowSwap }}>
         <div

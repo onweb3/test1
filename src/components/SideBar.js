@@ -49,7 +49,7 @@ function SideBar({ sidebarVisible, setSidebarVisibility }) {
             <div className="flex items-center space-x-2">
               <Link
                 href="/"
-                className="h-[36px] w-[36px] relative flex"
+                className="h-[76px] w-[76px] relative flex"
                 onClick={() => setActiveMenu(null)}
               >
                 <Image
@@ -59,7 +59,7 @@ function SideBar({ sidebarVisible, setSidebarVisibility }) {
                 />
               </Link>
 
-              <p className="font-moment text-base font-normal">Axis Finance</p>
+              {/* <p className="font-moment text-base font-normal">Axis Finance</p> */}
             </div>
 
             {/* <button className="flex text-2xl" onClick={toggleSidebar}>
@@ -73,7 +73,7 @@ function SideBar({ sidebarVisible, setSidebarVisibility }) {
             <div className="w-full py-6">
               <Link
                 href="/"
-                className="h-[60px] xl:h-[72px] w-[60px] xl:w-[72px] mx-auto relative flex"
+                className="h-[60px] xl:h-[50px] w-[60px] xl:w-[150px] mx-auto relative flex"
                 onClick={() => setActiveMenu(null)}
               >
                 <Image
