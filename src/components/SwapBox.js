@@ -34,8 +34,8 @@ const SwapBox = ({ title }) => {
   const [swapPopShow, setSwapPopShow] = useState(false);
   let [priceSwap, setPriceSwap] = useState([
     {
-      price: "499.929494",
-      balance: "999.855d86311 BNB",
+      price: "00.00",
+      balance: "9 BNB",
       coin: "Dee",
       icon: "/images/swap-page-icons/bnbcoin.png",
     },
@@ -52,9 +52,9 @@ const SwapBox = ({ title }) => {
   console.log(showSwap);
   return (
     <div
-      className={`${showSwap ? "flex flex-col" : "hidden"} sm:flex flex-col max-w-xl`}
+      className={`${showSwap ? "flex flex-col" : "hidden"} sm:flex flex-col max-w-2xl`}
     >
-      <div className="bg-white rounded-lg px-3 py-4 z-50  relative">
+      <div className="bg-[#252527] rounded-lg px-3 py-4 z-50   relative">
         {/* <div className="absolute right-[8%] sm:right-[46%] -bottom-[20px] ml-2 h-10 w-10 flex justify-center items-center bg-gradient-to-tr from-[#ACFFB9]  to-[#11FF37] rotate-158.2 rounded-full">
           <div className="h-[17px] w-[17px] mx-auto relative flex">
             <Image
@@ -84,8 +84,8 @@ const SwapBox = ({ title }) => {
           className="text-[110%] right-[8%] sm:right-[46%] -bottom-[20px]"
         />
 
-        <div className="flex justify-between flex-wrap-reverse mb-3 sm:mb-11">
-          <div className="text-2xl sm:text-3xl font-moment text-black ">
+        <div className="flex justify-between flex-wrap-reverse mb-3 sm:mb-11 ">
+          <div className="text-2xl sm:text-3xl   text-white ">
             {title}
           </div>
           <div className="flex flex-wrap-reverse mb-2 gap-x-1">
@@ -113,11 +113,11 @@ const SwapBox = ({ title }) => {
             </IconButton>
           </div>
         </div>
-        <div className="flex justify-between  mb-3">
-          <div className="flex font-bold items-center flex-wrap font-moment text-black">
+        <div className="flex justify-between  py-3 bg-[#37373c] rounded-t-lg px-2">
+          <div className="flex font-bold gap-2 items-center flex-wrap   text-white">
             From:
             <div
-              className="p-2 h-9 text-base rounded-full bg-[#F3F3F3] flex items-center font-moment font-normal cursor-pointer "
+              className="p-2 h-9 text-base rounded-full bg-[#999898] flex items-center   font-bold cursor-pointer "
               onClick={() => setSelectTokenShow(true)}
             >
               <div className="h-[22px] w-[22px] mr-1 mx-auto relative flex flex-wrap">
@@ -125,7 +125,7 @@ const SwapBox = ({ title }) => {
               </div>
               {priceSwap[0].coin}
             </div>
-            <div className="p-2 text-sm rounded-full ml-2 font-moment font-normal ">
+            <div className="p-2 text-sm rounded-full ml-2   font-normal ">
               YOU PAY
             </div>
           </div>
@@ -156,11 +156,12 @@ const SwapBox = ({ title }) => {
             </PercentageButton>
           </div>
         </div>
-        <div className="flex justify-between flex-row flex-wrap items-center">
+        <div className="flex justify-between flex-row flex-wrap items-center py-3 bg-[#37373c] rounded-b-lg px-2">
           <input
             defaultValue={priceSwap[0].price}
             type="number"
-            className="text-xl sm:text-2xl text-black w-[53%] font-moment"
+            
+            className="text-xl sm:text-2xl text-white w-[53%] bg-transparent   "
           />
 
           <div className="text-base text-[#BFC0C8] font-redHat sm:mt-0 mt-2">
@@ -197,9 +198,9 @@ const SwapBox = ({ title }) => {
       </div>
 
       <div className="bg-white rounded-lg px-3 py-4 my-1">
-        <div className="flex font-bold font-moment text-black">
+        <div className="flex font-bold   text-black">
           <div
-            className="p-2 h-9 text-base rounded-full bg-[#F3F3F3] font-moment font-normal flex items-center cursor-pointer"
+            className="p-2 h-9 text-base rounded-full bg-[#F3F3F3]   font-normal flex items-center cursor-pointer"
             onClick={() => setSelectTokenShow(true)}
           >
             <div className="h-[22px] w-[22px] mr-1 mx-auto relative flex">
@@ -207,7 +208,7 @@ const SwapBox = ({ title }) => {
             </div>
             {priceSwap[1].coin}
           </div>
-          <div className="p-2 text-sm rounded-full ml-2 font-moment font-normal">
+          <div className="p-2 text-sm rounded-full ml-2   font-normal">
             YOU RECEIVE
           </div>
         </div>
@@ -215,7 +216,7 @@ const SwapBox = ({ title }) => {
           <input
             defaultValue={priceSwap[1].price}
             type="number"
-            className="text-2xl text-[#B3B4BD] font-moment w-[50%]"
+            className="text-2xl text-[#B3B4BD]   w-[50%]"
           />
 
           <div className="text-base text-[#BFC0C8]">
@@ -226,7 +227,7 @@ const SwapBox = ({ title }) => {
 
       <BaseButton2
         customSize={true}
-        className="group text-black text-[22px] hover:text-white py-3 font-moment font-normal rounded-lg"
+        className="group text-black text-[22px] hover:text-white py-3   font-normal rounded-lg"
         onClick={() => setSwapPopShow(true)}
         hoverVariant={1}
       >
