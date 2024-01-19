@@ -15,11 +15,11 @@ function SwapLayout({ children }) {
             showSwap ? " md:col-span-3 transition-[" : "md:col-span-5 transition-all"
           } h-auto flex flex-col `}
         >
-          <SwapGraphBox showSwap={showSwap} />
-          <div className="hidden sm:grid grid-cols-2 gap-1 flex-1 pt-1">
+          {/* <SwapGraphBox showSwap={showSwap} /> */}
+          {/* <div className="hidden sm:grid grid-cols-2 gap-1 flex-1 pt-1">
             <GasPrice />
             <GasPrice />
-          </div>
+          </div> */}
         </div>
         {children}
       </MYContext.Provider>
