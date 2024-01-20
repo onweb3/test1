@@ -1,6 +1,6 @@
 let NavMenu = [
   {
-    title: "Swap",
+    title: "Bridge",
     hasSubMenu: true,
     iconImg: "/images/sidebar-icons/home.svg",
     route: "/dex",
@@ -33,7 +33,7 @@ let NavMenu = [
     ],
   },
   {
-    title: "Bridge",
+    title: "Claim",
     hasSubMenu: true,
     iconImg: "/images/sidebar-icons/dao.svg",
     route: "/dao",
