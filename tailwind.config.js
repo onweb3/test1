@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     fontFamily: {
       redHat: "var(--red-hat)",
-      moment: "var(--moment)",
+      moment: "'Inter', sans-serif",
     },
     colors: {
       main: "#17191E",

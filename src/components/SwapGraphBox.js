@@ -17,17 +17,17 @@ const SwapGraphBox = () => {
       <div
         className={`bg-white  rounded-xl ${
           showSwap ? "h-auto " : "h-auto sm:h-[99vh] "
-        } font-moment   px-2 py-4 sm:p-5 `}
+        } font-inter   px-2 py-4 sm:p-5 `}
       >
         <div className="flex justify-between flex-wrap-reverse">
           <div className="flex sm:flex-row flex-row-reverse items-center space-x-4">
             <div
               className={`${
                 swap ? "flex-row-reverse" : "flex-row"
-              } flex items-center text-lg  ml-2 sm:ml-0 sm:text-2xl font-moment text-black`}
+              } flex items-center text-lg  ml-2 sm:ml-0 sm:text-2xl font-inter text-black`}
             >
               <div
-                className="text-lg sm:text-2xl font-moment text-black flex items-center cursor-pointer"
+                className="text-lg sm:text-2xl font-inter text-black flex items-center cursor-pointer"
                 onClick={() => setSelectTokenShow(true)}
               >
                 <div className="h-[22px] w-[22px] mr-1 mx-auto relative flex">
@@ -39,12 +39,12 @@ const SwapGraphBox = () => {
                 </div>
                 AXIS
               </div>
-              <span className="text-lg sm:text-2xl font-moment text-black mx-2">
+              <span className="text-lg sm:text-2xl font-inter text-black mx-2">
                 /{" "}
               </span>
 
               <div
-                className="text-lg sm:text-2xl font-moment text-black flex items-center cursor-pointer"
+                className="text-lg sm:text-2xl font-inter text-black flex items-center cursor-pointer"
                 onClick={() => setSelectTokenShow(true)}
               >
                 <div className="h-[22px] w-[22px] mr-1 mx-auto relative flex">
@@ -119,7 +119,7 @@ const SwapGraphBox = () => {
         <div
           className={`text-5xl font-medium ${
             showSwap ? "hidden" : "flex"
-          } sm:flex items-center mt-8 font-moment text text-black`}
+          } sm:flex items-center mt-8 font-inter text text-black`}
         >
           0.0015{" "}
           <span className="ml-3 text-xl text-[#11FF37] font-redHat font-bold">
@@ -129,7 +129,7 @@ const SwapGraphBox = () => {
         <div
           className={`${
             showSwap ? "hidden" : "flex"
-          } sm:flex font-normal  text-base sm:text-lg text-[#707776] my-2 font-moment`}
+          } sm:flex font-normal  text-base sm:text-lg text-[#707776] my-2 font-inter`}
         >
           AXIS / BNB
         </div>

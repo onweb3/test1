@@ -40,8 +40,8 @@ const SwapBox = ({ title }) => {
       icon: "/images/swap-page-icons/bnbcoin.png",
     },
     {
-      price: "33302.8",
-      balance: "999.855d86311 AXIS",
+      price: "00.00",
+      balance: "91 DEE",
       coin: "Deelance",
       icon: "/images/swap-page-icons/axiscoin.png",
     },
@@ -117,7 +117,7 @@ const SwapBox = ({ title }) => {
           <div className="flex font-bold gap-2 items-center flex-wrap   text-white">
             From:
             <div
-              className="p-2 h-9 text-base rounded-full bg-[#999898] flex items-center   font-bold cursor-pointer "
+              className="p-2 h-9 text-base rounded-full bg-[#868686] flex items-center   font-bold cursor-pointer "
               onClick={() => setSelectTokenShow(true)}
             >
               <div className="h-[22px] w-[22px] mr-1 mx-auto relative flex flex-wrap">
@@ -197,10 +197,10 @@ const SwapBox = ({ title }) => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg px-3 py-4 my-1">
-        <div className="flex font-bold   text-black">
+      <div className="bg-[#252527] rounded-lg px-3 py-4 my-1">
+        <div className="flex font-bold   text-white">
           <div
-            className="p-2 h-9 text-base rounded-full bg-[#F3F3F3]   font-normal flex items-center cursor-pointer"
+            className="p-2 h-9 text-base rounded-full bg-[#868686]   font-normal flex items-center cursor-pointer"
             onClick={() => setSelectTokenShow(true)}
           >
             <div className="h-[22px] w-[22px] mr-1 mx-auto relative flex">
@@ -216,7 +216,7 @@ const SwapBox = ({ title }) => {
           <input
             defaultValue={priceSwap[1].price}
             type="number"
-            className="text-2xl text-[#B3B4BD]   w-[50%]"
+            className="text-2xl text-[#fff]  bg-transparent  w-[50%]"
           />
 
           <div className="text-base text-[#BFC0C8]">
@@ -227,7 +227,7 @@ const SwapBox = ({ title }) => {
 
       <BaseButton2
         customSize={true}
-        className="group text-black text-[22px] hover:text-white py-3   font-normal rounded-lg"
+        className="group text-black text-[22px] font-bold hover:text-white py-3    rounded-lg"
         onClick={() => setSwapPopShow(true)}
         hoverVariant={1}
       >
