@@ -200,8 +200,9 @@ const SwapBox = ({ title }) => {
         </div>
       </div>
 
-      <div className="bg-[#252527] rounded-lg px-3 py-4 my-1">
-        <div className="flex font-bold   text-white">
+      <div className="bg-[#252527] rounded-lg px-3 py-4 mt-1 mb-3">
+        <div className="flex font-bold  items-center gap-2  text-white py-3 bg-[#37373c] rounded-t-lg px-2">
+          To:
           <div
             className="p-2 h-9 text-base rounded-full bg-[#000000]   font-blod flex items-center cursor-pointer"
             onClick={() => setSelectTokenShow(true)}
@@ -213,7 +214,7 @@ const SwapBox = ({ title }) => {
           </div>
          
         </div>
-        <div className="flex justify-between  flex-wrap items-center mt-4">
+        <div className="flex justify-between  flex-wrap items-center  py-3 bg-[#37373c] rounded-b-lg px-2">
         <label>
         Receive:
           </label>
