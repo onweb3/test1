@@ -69,12 +69,12 @@ function SwapPop({ setShowHandler, priceSwap, swapHandler,  }) {
                   >
                     <div className="h-[22px] w-[22px] mr-1 mx-auto relative flex ">
                       <Image
-                        src="/images/swap-page-icons/bnbcoin.png"
+                        src="/images/swap-page-icons/dee.png"
                         fill
                         alt=""
                       />
                     </div>
-                    BNB
+                    DEE
                   </div>
                 </div>
               </div>

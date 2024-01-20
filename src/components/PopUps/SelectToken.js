@@ -90,41 +90,43 @@ function SelectToken({ setSelectTokenShow }) {
                 />
 
                 <Token
-                  src={"/images/crypto-icons/usdt.svg"}
-                  active={activeToken == "USDT"}
+                  src={"/images/crypto-icons/dee.png"}
+                  active={activeToken == "DEE"}
                   setActiveToken={setActiveToken}
-                  label={"USDT"}
+                  label={"DEE"}
                 />
                 <Token
                   src={"/images/crypto-icons/bnbcolor.svg"}
                   active={activeToken == "BNB"}
                   setActiveToken={setActiveToken}
-                  label={"BNB"}
+                  label={"Dlance"}
                 />
               </div>
             </div>
             <div className="border-b border-[#BEBEBE] sm:border-[#464646] py-2"></div>
 
             <div className="px-6 py-6">
-              <div className="flex justify-between items-center pb-4">
+            <div className="flex justify-between items-center pb-4">
                 <div className="flex gap-4 items-center ">
                   <Image
-                    src="/images/crypto-icons/btc.svg"
+                    src="/images/crypto-icons/dee.png"
                     alt=""
                     width={56}
                     height={56}
                   />
                   <div>
                     <h2 className="text-black sm:text-white font-redHat font-[700] text-xl pr-1">
-                      Bitcoin
+                      DEE
                     </h2>
-                    <p className="text-[#7D7D7D] text-base text-[500]">BTC</p>
+                    <p className="text-[#7D7D7D] text-base text-[500]">DEE</p>
                   </div>
                 </div>
                 <span className="text-[#75ff8b] font-redHat font-[700] text-2xl">
-                  {activeToken=="BTC" && <AiFillCheckCircle />}
+                  {activeToken=="DEE" && <AiFillCheckCircle />}
+
                 </span>
               </div>
+            
 
               <div className="flex justify-between items-center pb-4">
                 <div className="flex gap-4 items-center ">
