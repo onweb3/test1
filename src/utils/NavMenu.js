@@ -42,16 +42,16 @@ let NavMenu = [
       { label: "Create Dao", link: "/gasless-swap" },
     ],
   },
-  // {
-  //   title: "Future",
-  //   hasSubMenu: true,
-  //   iconImg: "/images/sidebar-icons/future.svg",
-  //   route: "/future",
-  //   subMenus: [
-  //     { label: "Trade", link: "/axis-swap" },
-  //     { label: "Liquidity Pools", link: "/gasless-swap" },
-  //   ],
-  // },
+  {
+    title: "Bridge",
+    hasSubMenu: true,
+    iconImg: "/images/sidebar-icons/future.svg",
+    route: "/bridge",
+    subMenus: [
+      { label: "Dee Bridge", link: "/deebridge" },
+      { label: "Liquidity Pools", link: "/gasless-swap" },
+    ],
+  },
   // {
   //   title: "Options",
   //   hasSubMenu: true,
