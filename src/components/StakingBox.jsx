@@ -276,12 +276,12 @@ function StakingBox() {
       <div className="border-2 border-main-green-shade-40 rounded-xl pt-6 pb-10 bg-green-radial transition-all duration-300">
         <header className="px-4 sm:px-6 mb-7">
           <h1 className="text-center text-lg sm:text-xl xl:text-2xl mb-3 font-black">
-            FLUID STAKING
+            DEE STAKING
           </h1>
           {/* {isConnected && isOnCorrectChain ? ( */}
           <p className="text-center font-medium mb-2 text-sm">
             {/* Total $DLANCE in Fluid Staking 476,852,255.89 */}
-            Total in Fluid Staking{" "}
+            Total in DEE Staking{" "}
           </p>
 
           <p className="text-center mb-4">
@@ -294,7 +294,7 @@ function StakingBox() {
                       2
                     )
                   ).toLocaleString()}{" "}
-              DLANCE
+              DEE
             </span>{" "}
             <span className="opacity-80 text-sm">
               ( $
