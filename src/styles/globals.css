@@ -14,6 +14,10 @@
   body {
     @apply bg-main text-white;
   }
+
+  .primary-gradient {
+    @apply bg-gradient-to-br from-blue to-green;
+  }
 }
 
 @layer components {
@@ -21,6 +25,8 @@
     @apply;
   }
 }
+
+
 .font-inter{
   font-family: 'Inter', sans-serif;
 }
@@ -116,7 +122,16 @@ input[type="radio"]#medium {
     transform: translate(-50%, -50%) scale(1);
   }
 }
-
+@keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
 @keyframes outAnimation {
   0% {
     opacity: 1;

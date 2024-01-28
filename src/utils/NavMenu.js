@@ -1,12 +1,12 @@
 let NavMenu = [
   {
-    title: "Bridge",
+    title: "Swap",
     hasSubMenu: true,
     iconImg: "/images/sidebar-icons/home.svg",
     route: "/dex",
     subMenus: [
       { label: "Dee Swap", link: "/axis-swap" },
-      // { label: "Gasless Swap", link: "/gasless-swap" },
+      { label: " Swap and Lock", link: "/gasless-swap" },
       // { label: "Liquidity Pools", link: "/liquidty-pools" },
     ],
   },
@@ -26,9 +26,9 @@ let NavMenu = [
     title: "Staking",
     hasSubMenu: true,
     iconImg: "/images/sidebar-icons/stacking.svg",
-    route: "/stacking",
+    route: "/staking",
     subMenus: [
-      { label: "Create Staking", link: "/axis-swap" },
+      { label: "Create Staking", link: "/stake" },
       { label: "Live Staking Pools", link: "/gasless-swap" },
     ],
   },
@@ -62,13 +62,13 @@ let NavMenu = [
   //     { label: "Liquidity Pools", link: "/LiquidityPools" },
   //   ],
   // },
-  // {
-  //   title: "Lending & Borrowing",
-  //   hasSubMenu: false,
-  //   iconImg: "/images/sidebar-icons/lending.svg",
-  //   route: "/lending-and-borrowing",
-  //   subMenus: [],
-  // },
+  {
+    title: "Lending & Borrowing",
+    hasSubMenu: false,
+    iconImg: "/images/sidebar-icons/lending.svg",
+    route: "/lending-and-borrowing",
+    subMenus: [],
+  },
   // {
   //   title: "Yield Aggregator",
   //   hasSubMenu: false,
