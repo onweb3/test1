@@ -29,7 +29,7 @@ let NavMenu = [
     route: "/staking",
     subMenus: [
       { label: "Create Staking", link: "/stake" },
-      { label: "Live Staking Pools", link: "/gasless-swap" },
+      { label: "My Portfolio", link: "/portfolio" },
     ],
   },
   {
