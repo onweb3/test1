@@ -7,6 +7,7 @@ import axios from "axios";
 import { useAccount, useSwitchNetwork } from "wagmi";
 import { useEffect, useState } from "react";
 import { ConnectButton } from "components/ConnectButton";
+import Link from "next/link";
 
 const TitleValue = ({ title, value }) => {
   return (
@@ -45,6 +46,7 @@ const defaultQueryFn = async ({ queryKey }) => {
 
 function Swap() {
   const [inWardNetworks, setInwardNetworks] = useState(null);
+
   const [inwardNetworkValue, setInWardNetworkValue] = useState(undefined);
 
   const handleInWardValueChange = (e) => {
@@ -193,9 +195,9 @@ function Swap() {
                 <span>All transfers are slippage free.</span>
               </p>
 
-              <a href="/" className="text-blue underline flex w-fit">
+              <Link href="/" className="text-blue underline flex w-fit">
                 Learn More
-              </a>
+              </Link>
             </header>
 
             {isConnected ? (
