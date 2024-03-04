@@ -1,5 +1,13 @@
 let NavMenu = [
   {
+    title: "Dashboard",
+    hasSubMenu: false,
+    iconImg: "/images/sidebar-icons/home.svg",
+    route: "/dashboard",
+    subMenus: [],
+    
+  },
+  {
     title: "Deposit",
     hasSubMenu: false,
     iconImg: "/images/sidebar-icons/options.svg",
@@ -8,9 +16,29 @@ let NavMenu = [
     
   },
   {
-    title: "Swap",
+    title: "Claim",
     hasSubMenu: true,
-    iconImg: "/images/sidebar-icons/home.svg",
+    iconImg: "/images/sidebar-icons/dao.svg",
+    route: "/dao",
+    subMenus: [
+      { label: "Axis Dao", link: "/axis-swap" },
+      { label: "Create Dao", link: "/gasless-swap" },
+    ],
+  },
+  {
+    title: "Bridge",
+    hasSubMenu: true,
+    iconImg: "/images/sidebar-icons/future.svg",
+    route: "/bridge",
+    subMenus: [
+      { label: "Dee Bridge", link: "/deebridge" },
+      // { label: "Liquidity Pools", link: "/gasless-swap" },
+    ],
+  },
+  {
+    title: "Swap",
+    hasSubMenu: false,
+    iconImg: "/images/sidebar-icons/yield.svg",
     route: "/dex",
     subMenus: [
       { label: "Dee Swap", link: "/axis-swap" },
@@ -40,26 +68,8 @@ let NavMenu = [
       { label: "My Portfolio", link: "/portfolio" },
     ],
   },
-  {
-    title: "Claim",
-    hasSubMenu: true,
-    iconImg: "/images/sidebar-icons/dao.svg",
-    route: "/dao",
-    subMenus: [
-      { label: "Axis Dao", link: "/axis-swap" },
-      { label: "Create Dao", link: "/gasless-swap" },
-    ],
-  },
-  {
-    title: "Bridge",
-    hasSubMenu: true,
-    iconImg: "/images/sidebar-icons/future.svg",
-    route: "/bridge",
-    subMenus: [
-      { label: "Dee Bridge", link: "/deebridge" },
-      { label: "Liquidity Pools", link: "/gasless-swap" },
-    ],
-  },
+
+
   // {
   //   title: "Options",
   //   hasSubMenu: true,
@@ -70,13 +80,13 @@ let NavMenu = [
   //     { label: "Liquidity Pools", link: "/LiquidityPools" },
   //   ],
   // },
-  {
-    title: "Lending & Borrowing",
-    hasSubMenu: false,
-    iconImg: "/images/sidebar-icons/lending.svg",
-    route: "/lending-and-borrowing",
-    subMenus: [],
-  },
+  // {
+  //   title: "Lending & Borrowing",
+  //   hasSubMenu: false,
+  //   iconImg: "/images/sidebar-icons/lending.svg",
+  //   route: "/lending-and-borrowing",
+  //   subMenus: [],
+  // },
   // {
   //   title: "Yield Aggregator",
   //   hasSubMenu: false,
@@ -93,7 +103,7 @@ let NavMenu = [
     subMenus: [],
   },
   {
-    title: "BlockChain",
+    title: "Explorer",
     hasSubMenu: false,
     iconImg: "/images/sidebar-icons/portfolio.svg",
     route: "/portfolio",

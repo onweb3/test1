@@ -5,7 +5,7 @@ const IndexPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/dex/axis-swap");
+    router.push("/dashboard");
   }, []);
 
   return (
