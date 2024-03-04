@@ -1,5 +1,13 @@
 let NavMenu = [
   {
+    title: "Deposit",
+    hasSubMenu: false,
+    iconImg: "/images/sidebar-icons/options.svg",
+    route: "/deposit",
+    subMenus: [],
+    
+  },
+  {
     title: "Swap",
     hasSubMenu: true,
     iconImg: "/images/sidebar-icons/home.svg",
