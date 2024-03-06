@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { ConnectButton } from "components/ConnectButton";
 import BlackFancyPaper from 'components/Bridge/BlackFancyPaper';
 import Button from 'components/Button';
-
+import { useAccount } from "wagmi";
 function index() {
+        const { isConnected, address } = useAccount();
+        
   return (
    <section className=' flex justify-center items-center sm:h-[100vh] h-auto'>
  
@@ -25,7 +27,16 @@ function index() {
        </Button>
     </div>
     <div>
-    <ConnectButton className="mt-5 w-full text-black-100 hover:text-white-100 rounded-lg" />
+    {isConnected ? (
+        
+        //   <button onClick={approveAndDepositHandler}>Approve and Deposit</button>
+        <><h1>hi</h1></>
+       
+      ) : (
+        <ConnectButton className="mt-5 w-full text-black-100 hover:text-white-100 rounded-lg" />
+
+      )}
+  
     </div>
     </div>
     </main>
