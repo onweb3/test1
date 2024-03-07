@@ -65,9 +65,7 @@ contract DepositContract is Ownable, ReentrancyGuard {
     function getAllDepositors() external view returns (address[] memory) {
         return depositors;
     }
-    function getDepositedAmount(address depositor) external view returns (uint256) {
-    // Return the deposited amount for the specified depositor
-    return deposits[depositor];
+
     }
 
 }
