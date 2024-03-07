@@ -1,102 +1,91 @@
-import Web3 from 'web3';
+import { useReadContracts, useWriteContracts } from "wagmi";
 import DepositContractABI from '../contract/compile/depositContract.json';
-import ERC20TokenABI from '../contract/compile/mockErc20.json'; // Import ERC-20 Token ABI
+import ERC20TokenABI from '../contract/compile/mockErc20.json';
 
 const contractAddress = process.env.DEPOSIT_CONTRACT;
-const web3 = new Web3(window.ethereum);
-const depositContract = new web3.eth.Contract(DepositContractABI, contractAddress);
+const erc20TokenAddress = process.env.DEPOSIT_TOKEN;
 
-// function to deposit the erc20 token current data is goerli testnet
-async function depositTokensWithApproval(amount) {
-  try {
-    const accounts = await web3.eth.requestAccounts();
-    const sender = accounts[0];
+function useDepositContract() {
+  const readContract = useReadContracts(DepositContractABI, contractAddress);
+  const writeContract = useWriteContracts(DepositContractABI, contractAddress);
+  const erc20TokenContract = useWriteContracts(ERC20TokenABI, erc20TokenAddress);
 
-    const tokenAddress = process.env.DEPOSIT_TOKEN;
+  async function approve(amount) {
+    try {
+      const accounts = await readContract.eth.requestAccounts();
+      const sender = accounts[0];
 
-
-
-    const erc20TokenContract = new web3.eth.Contract(ERC20TokenABI, tokenAddress);
-
-    const currentAllowance = await erc20TokenContract.methods.allowance(sender, contractAddress).call();
-
-    if (currentAllowance < amount) {
-      const approvalResult = await erc20TokenContract.methods.approve(contractAddress, amount).send({ from: sender });
-      console.log('erc20 token approved.', approvalResult);
+      // Approve the contract to spend the user's tokens
+      await erc20TokenContract.methods.approve(contractAddress, amount).send({ from: sender });
+      console.log('Approval successful');
+    } catch (error) {
+      console.error('Error approving tokens:', error);
     }
-
-    const depositResult = await depositContract.methods.deposit(amount).send({ from: sender });
-    console.log('token deposited', depositResult);
-  } catch (error) {
-    console.error('something went wrong - deposittokenwithapproval', error);
   }
+
+  async function deposit(amount) {
+    try {
+      const accounts = await readContract.eth.requestAccounts();
+      const sender = accounts[0];
+      const allowance = await readContract.methods.allowance(sender, contractAddress).call();
+
+      if (allowance < amount) {
+        await approve(amount);
+      }
+      const result = await writeContract.methods.deposit(amount).send({ from: sender });
+      console.log('Deposit successful:', result);
+    } catch (error) {
+      console.error('Error depositing tokens:', error);
+    }
+  }
+
+  async function getDepositAmount(depositor) {
+    try {
+      const result = await readContract.methods.getDepositAmount(depositor).call();
+      console.log(`Deposit amount for ${depositor}:`, result);
+    } catch (error) {
+      console.error('Error getting deposit amount:', error);
+    }
+  }
+//only owner -> create a protected path to use this on owner wallet only
+  async function withdraw(amount) {
+    try {
+      const accounts = await readContract.eth.requestAccounts();
+      const owner = accounts[0];
+
+      const result = await writeContract.methods.withdraw(amount).send({ from: owner });
+      console.log('Withdrawal successful:', result);
+    } catch (error) {
+      console.error('Error withdrawing tokens:', error);
+    }
+  }
+
+  async function getTotalDepositedAmount() {
+    try {
+      const result = await readContract.methods.getTotalDepositedAmount().call();
+      console.log('Total deposited amount:', result);
+    } catch (error) {
+      console.error('Error getting total deposited amount:', error);
+    }
+  }
+
+  async function getERC20Balance(account) {
+    try {
+      const balance = await erc20TokenContract.methods.balanceOf(account).call();
+      console.log(`ERC20 balance for ${account}:`, balance);
+    } catch (error) {
+      console.error('Error getting ERC20 balance:', error);
+    }
+  }
+
+
+  return {
+    deposit,
+    getDepositAmount,
+    withdraw,
+    getTotalDepositedAmount,
+    getERC20Balance,
+  };
 }
 
-// function to withdraw tokens this is only for owner
-async function withdrawTokens(amount) {
-  try {
-    const accounts = await web3.eth.requestAccounts();
-    const owner = accounts[0];
-
-
-    const result = await depositContract.methods.withdraw(amount).send({ from: owner });
-    console.log('token successfully withdrwan', result);
-  } catch (error) {
-    console.error('smoething went wrong - withdrawtoken', error);
-  }
-}
-
-// function to get the number of depositors
-async function getNumDepositors() {
-  try {
-    const result = await depositContract.methods.getNumDepositors().call();
-    console.log('total no of wallet deposited:', result);
-
-  } catch (error) {
-    console.error('something went wrong - getnumdeposit', error);
-  }
-}
-
-// function to get a depositor at a specific index
-async function getDepositorAtIndex(index) {
-  try {
-    const result = await depositContract.methods.getDepositorAtIndex(index).call();
-    console.log(` ${index}:`, result);
-
-  } catch (error) {
-    console.error('wrong index', error);
-  }
-}
-
-// function to get all depositors in an array
-async function getAllDepositors() {
-  try {
-    const result = await depositContract.methods.getAllDepositors().call();
-    
-    console.log('depostor:', result);
-
-
-  } catch (error) {
-    console.error('something went wrong - get all depositor', error);
-  }
-}
-
-// function to get deposited amount for a specific depositor
-async function getDepositedAmount(depositor) {
-  try {
-    const result = await depositContract.methods.getDepositedAmount(depositor).call();
-    console.log(`Deposited amount for ${depositor}:`, result);
-  } catch (error) {
-    console.error('deposit not found', error);
-  }
-}
-
-// export functions for use in your DApp
-export {
-  depositTokensWithApproval,
-  withdrawTokens,
-  getNumDepositors,
-  getDepositorAtIndex,
-  getAllDepositors,
-  getDepositedAmount
-};
+export default useDepositContract;

@@ -1,6 +1,6 @@
 import { useWeb3Modal } from "@web3modal/react";
 import { useCallback, useEffect, useState } from "react";
-import { mainnet } from "wagmi/chains";
+import { mainnet , goerli } from "wagmi/chains";
 import { useAccount } from "wagmi";
 
 import chainIconBSC from "../../public/images/chain_bsc.png";
@@ -17,7 +17,8 @@ export function ConnectButton() {
   const { chain } = getNetwork();
 
   const openWalletConnectModal = useCallback(() => {
-    setDefaultChain(mainnet);
+    setDefaultChain(goerli);
+    // setDefaultChain(mainnet);
     if (isOpen) return;
     open();
   }, [isOpen, open, setDefaultChain]);
