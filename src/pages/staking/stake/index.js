@@ -5,9 +5,13 @@ import React from 'react'
 export default function Stake() {
   return (
     <>
-    <StakeNavbar/>
+    {/* <StakeNavbar/> */}
     <div className="sm:max-w-[472px] w-full bg-main-bg mx-auto">
-        <StakingBox />
+        {/* <StakingBox /> */}
+
+        <h1>
+          Coming soon ....
+        </h1>
       </div>
     </>
   )

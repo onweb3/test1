@@ -65,7 +65,7 @@ let NavMenu = [
     route: "/staking",
     subMenus: [
       { label: "Create Staking", link: "/stake" },
-      { label: "My Portfolio", link: "/portfolio" },
+      // { label: "My Portfolio", link: "/portfolio" },
     ],
   },
 
