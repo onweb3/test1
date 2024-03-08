@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import SidebarLayout from "layout/SidebarLayout";
 
 
-import { EthereumClient } from "@web3modal/ethereum";
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { memo } from "react";

@@ -4,9 +4,9 @@ import Input from "./Input";
 
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useAccount, useSwitchNetwork } from "wagmi";
+// import { useAccount, useSwitchNetwork } from "wagmi";
 import { useEffect, useState } from "react";
-import { ConnectButton } from "components/ConnectButton";
+// import { ConnectButton } from "components/ConnectButton";
 import Link from "next/link";
 
 const TitleValue = ({ title, value }) => {
@@ -223,7 +223,7 @@ function Swap() {
 
         <div className="text-[86%] sm:text-[100%]">
           {/* <ConnectWalletButton  /> */}
-          <ConnectButton className="mt-5 w-full text-black-100 hover:text-white-100 rounded-lg" />
+          {/* <ConnectButton className="mt-5 w-full text-black-100 hover:text-white-100 rounded-lg" /> */}
         </div>
       </main>
     </div>
