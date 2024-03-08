@@ -1,28 +1,41 @@
 import { w3mConnectors } from "@web3modal/ethereum";
-import { createConfig, configureChains, mainnet } from "wagmi";
-import { bsc, bscTestnet, polygon, goerli } from "wagmi/chains";
+import { createConfig, mainnet, configureChains } from "wagmi";
+import { bsc, bscTestnet, polygon } from "wagmi/chains";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
 import { InjectedConnector } from "wagmi/connectors/injected";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { infuraProvider } from "wagmi/providers/infura";
+
 import { publicProvider } from "wagmi/providers/public";
+// import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 
-const customChains = [
-  mainnet,
-  bsc,
-  goerli,
-  ...(import.meta.env?.MODE === "development" ? [bsc, polygon, bscTestnet, goerli] : []),
-];
-
-const customProviders = [
-  infuraProvider({
-    apiKey: '7b50cd907db34540b993f3209ba55488',
-  }),
-  publicProvider(),
-  // Add other providers if needed
-];
-
-const { chains, publicClient, webSocketPublicClient } = configureChains(customChains, customProviders);
+const { chains, publicClient, webSocketPublicClient } = configureChains(
+  [
+    mainnet,
+    bsc,
+    ...(import.meta.env?.MODE === "development"
+      ? [bsc, polygon, bscTestnet]
+      : []),
+  ],
+  [
+    // jsonRpcProvider({
+    //   rpc: (chain) => {
+    //     if (chain.id === 56)
+    //       return {
+    //         http: import.meta.env.VITE_QUICKNODE_HTTP_PROVIDER_URL_BSC, // 👈 Replace this with your HTTP URL from the previous step
+    //       };
+    //     else if (chain.id === 1)
+    //       return {
+    //         http: import.meta.env.VITE_QUICKNODE_HTTP_PROVIDER_URL_ETH, // 👈 Replace this with your HTTP URL from the previous step
+    //       };
+    //   },
+    // }),
+    infuraProvider({
+      apiKey: '7b50cd907db34540b993f3209ba55488',
+    }),
+    publicProvider(),
+  ]
+);
 
 export const config = createConfig({
   autoConnect: true,
@@ -49,7 +62,7 @@ export const config = createConfig({
 export const web3modalClient = createConfig({
   autoConnect: true,
   connectors: w3mConnectors({
-    projectId: '0f54f4c2d5ee6ce8991cbf25774ad6d6',
+    projectId: import.meta.env.VITE_walletConnectProjectId,
     chains,
   }),
   publicClient,
