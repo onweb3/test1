@@ -6,7 +6,7 @@ import ERC20TokenABI from "../contract/compile/mockErc20.json";
 
 async function getERC20TokenBalance(tokenAddress, accountAddress) {
   try {
-    const { data: signer } = useProvider();
+    // const { data: signer } = useProvider();
 
     const erc20TokenContract = new ethers.Contract(tokenAddress, ERC20TokenABI, signer);
 
