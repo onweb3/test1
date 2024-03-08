@@ -1,29 +1,29 @@
-// import { LiaHandHoldingUsdSolid } from "react-icons/lia";
+import { LiaHandHoldingUsdSolid } from "react-icons/lia";
 
-// import { BiWallet } from "react-icons/bi";
-// import BaseButton from "./BaseButton";
+import { BiWallet } from "react-icons/bi";
+import BaseButton from "./BaseButton";
 
-// function StakeNavbar() {
-//   return (
-//    <>
-//    <div className="flex justify-center gap-4  py-8">
+function StakeNavbar() {
+  return (
+   <>
+   <div className="flex justify-center gap-4  py-8">
 
-//    <BaseButton>
-//    Staking
-//    </BaseButton>
+   <BaseButton>
+   Staking
+   </BaseButton>
 
-//    <BaseButton>
-//    Portfolio</BaseButton>
+   <BaseButton>
+   Portfolio</BaseButton>
 
-//    <BaseButton>
-//    Buy Deelance</BaseButton>
+   <BaseButton>
+   Buy Deelance</BaseButton>
 
-//    </div>
-//    </>
-//   )
-// }
+   </div>
+   </>
+  )
+}
 
-// export default StakeNavbar
+export default StakeNavbar
 
 
 

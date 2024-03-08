@@ -8,7 +8,7 @@ import {
   getDepositAmount,
   withdrawFromContract,
   getTokenBalance,
-} from './contract.js';
+} from 'utils/contract.js';
 import Web3 from 'web3';
 const ConnectWallet = () => {
   const [web3, setWeb3] = useState(null);

@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import Button from "./Button";
 import StakeInputBox from "./StakeInputBox";
-import { useContractWrite } from "wagmi";
+// import { useContractWrite } from "wagmi";
 import {
   CONTRACT_ADDRESS_FLEXIBLE_STAKING,
   FLEXIBLE_STAKING_ABI,

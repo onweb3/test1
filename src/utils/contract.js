@@ -1,7 +1,7 @@
 // ContractInteraction.js
 import Web3 from 'web3';
-import DepositContractABI from '../../contract/compile/depositContract.json'; // Import your contract ABI
-import erc20TokenABI from '../../contract/compile/mockErc20.json';
+import DepositContractABI from '../contract/compile/depositContract.json'; // Import your contract ABI
+import erc20TokenABI from  '../contract/compile/mockErc20.json';
 const contractAddress = "0xEaF84229217E799a56019ee0218a9aC390E5E07D"; // Replace with your actual contract address
 let web3;
 let contract;
@@ -110,7 +110,7 @@ const getTokenBalance = async (addressToCheck) => {
   }
 };
 
-export {
+ export {
   connectWallet,
   disconnectWallet,
   getContractBalance,

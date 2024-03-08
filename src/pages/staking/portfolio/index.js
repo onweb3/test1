@@ -688,4 +688,14 @@
 //   }
   
 //   export default PortfolioPage;
+
+import React from 'react'
+
+function PortfolioPage() {
+  return (
+    <div>index</div>
+  )
+}
+
+export default PortfolioPage
   
