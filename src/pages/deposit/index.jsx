@@ -17,8 +17,8 @@ function Index() {
                 <h1 className="text-center text-3xl mb-10 border-b-2 w-fit mx-auto border-main-green font-bold">
                   Deposit Here
                 </h1>
-                <p>Total Deposited Tokens: </p>
-                <p className="">Available balance : </p>
+             
+           
               </div>
          <WalletConnect/>
             </div>

@@ -1,5 +1,5 @@
 // src/components/ConnectWallet.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   connectWallet,
   disconnectWallet,
@@ -8,15 +8,15 @@ import {
   getDepositAmount,
   withdrawFromContract,
   getTokenBalance,
-} from 'utils/contract.js';
-import Web3 from 'web3';
+} from "utils/contract.js";
+import Web3 from "web3";
 const ConnectWallet = () => {
   const [web3, setWeb3] = useState(null);
-  const [account, setAccount] = useState('');
-  const [amount, setAmount] = useState('');
+  const [account, setAccount] = useState("");
+  const [amount, setAmount] = useState("");
   const [contractBalance, setContractBalance] = useState("");
   const [myBalance, setMyBalance] = useState("");
-  
+
   useEffect(() => {
     const loadWeb3 = async () => {
       if (window.ethereum) {
@@ -29,38 +29,36 @@ const ConnectWallet = () => {
           updateMyBalance();
           setAccount(accounts[0]);
         } catch (error) {
-          console.error('Error connecting to wallet:', error);
+          console.error("Error connecting to wallet:", error);
         }
       } else {
-        console.error('No wallet detected');
+        console.error("No wallet detected");
       }
     };
     loadWeb3();
   }, []);
 
-
   const handleMaxButtonClick = async () => {
     try {
       // Ensure that the web3 object is initialized
       if (!web3) {
-        console.error('Web3 not initialized');
+        console.error("Web3 not initialized");
         return;
       }
-  
+
       // Ensure that the account variable is a valid Ethereum address
       const isValidAddress = web3.utils.isAddress(account);
-  
+
       if (!isValidAddress) {
-        console.error('Invalid Ethereum address:', account);
+        console.error("Invalid Ethereum address:", account);
         return;
       }
-  
+
       const myTokenBal = await getTokenBalance(account);
       setAmount(myTokenBal);
     } catch (error) {
-      console.error('Error updating balance:', error);
+      console.error("Error updating balance:", error);
     }
-    
   };
 
   const handleDepositButtonClick = async () => {
@@ -68,7 +66,7 @@ const ConnectWallet = () => {
       await depositToContract(amount);
       // You might want to refresh the UI or show a success message here
     } catch (error) {
-      console.error('Error depositing to contract:', error);
+      console.error("Error depositing to contract:", error);
       // Handle error, show an error message, etc.
     }
   };
@@ -78,7 +76,7 @@ const ConnectWallet = () => {
       await withdrawFromContract(amount);
       // You might want to refresh the UI or show the balance in your app
     } catch (error) {
-      console.error('Error getting contract balance:', error);
+      console.error("Error getting contract balance:", error);
       // Handle error, show an error message, etc.
     }
   };
@@ -90,73 +88,72 @@ const ConnectWallet = () => {
     try {
       // Ensure that the web3 object is initialized
       if (!web3) {
-        console.error('Web3 not initialized');
+        console.error("Web3 not initialized");
         return;
       }
-  
+
       // Ensure that the account variable is a valid Ethereum address
       const isValidAddress = web3.utils.isAddress(account);
-  
+
       if (!isValidAddress) {
-        console.error('Invalid Ethereum address:', account);
+        console.error("Invalid Ethereum address:", account);
         return;
       }
-  
+
       const mywalletBal = await getDepositAmount(account);
       setMyBalance(mywalletBal);
     } catch (error) {
-      console.error('Error updating balance:', error);
+      console.error("Error updating balance:", error);
     }
-  }
+  };
   console.log();
   return (
-    <div className="flex justify-center items-center ">
-      <div className=" p-8 rounded shadow-md">
-        <h2 className="text-2xl font-semibold mb-4">Deposit Form</h2>
+    <div className=" ">
+      <div className="  rounded shadow-md">
+        
         <div className="mb-4">
-          
-          
-          
-          <label htmlFor="amount" className="block text-gray-700 text-sm font-bold mb-2">
-            Amount
-          </label>
-          <p className='text-black'>Total Deposited {contractBalance} Deelance</p>
-          <p className='text-black'>You deposited {myBalance} deelance</p>
-          <input
+        
+          <p className="text-white text-center py-1">
+            Total Deposited {contractBalance} Deelance
+          </p>
+          <p className="text-white text-center py-2">You deposited {myBalance} deelance</p>
+        <div className=" bg-white text-center py-1 px-4 rounded-full flex items-center ">
+
+        <input
             type="number"
             id="amount"
-            className="w-full text-black p-2 border rounded focus:outline-none focus:border-blue-500"
+            className="w-full  text-black p-2  rounded focus:outline-none focus:border-blue-500"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
           />
-        </div>
-        <div className="flex items-center space-x-2 mb-4">
-          <button
-            className="bg-blue-500 text-white px-4 py-2 rounded focus:outline-none"
+             <button
+            className=" text-black px-4 py-2 font-semibold focus:outline-none rounded-full bg-green "
             onClick={handleMaxButtonClick}
           >
             Max
           </button>
+        </div>
+        </div>
+        <div className="flex items-center justify-center space-x-2 mb-4">
+       
           <button
-            className="bg-green-500 text-white px-4 py-2 rounded focus:outline-none"
+            className=" bg-green  text-black font-medium px-4 py-2 rounded focus:outline-none"
             onClick={handleDepositButtonClick}
           >
             Deposit
           </button>
           <button
-            className="bg-red-500 text-white text-sm px-4 py-2 rounded focus:outline-none"
+            className=" bg-light-green text-black font-medium text-sm px-4 py-2 rounded focus:outline-none"
             onClick={handleGetwithdraw}
           >
             Withdraw-OwnerOnly
           </button>
-          
         </div>
         {web3 ? (
-          <p className='text-black'>Connected to wallet. Account: {account}</p>
+          <p className="text-black text-center">Connected to wallet. Account: {account}</p>
         ) : (
-          <p>Connect your wallet to proceed</p>
+          <p className=" text-center">Connect your wallet to proceed</p>
         )}
-       
       </div>
     </div>
   );
