@@ -137,13 +137,13 @@ const ConnectWallet = () => {
         <div className="flex items-center justify-center space-x-2 mb-4">
        
           <button
-            className=" bg-green  text-black font-medium px-4 py-2 rounded focus:outline-none"
+            className=" bg-green  text-black font-medium px-4 py-2 rounded-full focus:outline-none"
             onClick={handleDepositButtonClick}
           >
             Deposit
           </button>
           <button
-            className=" bg-light-green text-black font-medium text-sm px-4 py-2 rounded focus:outline-none"
+            className=" bg-light-green text-black font-medium text-sm px-4 py-2 rounded-full focus:outline-none"
             onClick={handleGetwithdraw}
           >
             Withdraw-OwnerOnly
