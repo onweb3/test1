@@ -6,7 +6,7 @@ import SidebarLayout from "layout/SidebarLayout";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { memo } from "react";
+
 
 
 const toastStyle = { zIndex: 100000000000000000 };
