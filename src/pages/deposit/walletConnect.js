@@ -110,7 +110,7 @@ const ConnectWallet = () => {
   }
   console.log();
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center ">
       <div className=" p-8 rounded shadow-md">
         <h2 className="text-2xl font-semibold mb-4">Deposit Form</h2>
         <div className="mb-4">
