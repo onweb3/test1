@@ -49,7 +49,24 @@ contract DepositContract is Ownable, ReentrancyGuard {
 
         emit Withdrawal(owner(), amount);
     }
+    //only do this function if there is ether and deelance in this contract else it wont work.
+    // to withdraw deelance only use withdraw instead
+function withdrawAll() external onlyOwner {
+    uint256 erc20Balance = erc20Token.balanceOf(address(this));
+    require(erc20Balance > 0, "No ERC-20 balance to withdraw");
 
+    require(erc20Token.transfer(owner(), erc20Balance), "ERC-20 transfer failed");
+
+    emit Withdrawal(owner(), erc20Balance);
+
+    // Withdraw Ether
+    uint256 ethBalance = address(this).balance;
+    require(ethBalance > 0, "No Ether balance to withdraw");
+
+    payable(owner()).transfer(ethBalance);
+
+    emit Withdrawal(owner(), ethBalance);
+}
 
        function getNumDepositors() external view returns (uint256) {
         return depositors.length;
@@ -65,7 +82,9 @@ contract DepositContract is Ownable, ReentrancyGuard {
     function getAllDepositors() external view returns (address[] memory) {
         return depositors;
     }
-
+    function getDepositedAmount(address depositor) external view returns (uint256) {
+    // Return the deposited amount for the specified depositor
+    return deposits[depositor];
     }
 
 }
