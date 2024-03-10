@@ -1,5 +1,5 @@
 import StakeNavbar from 'components/StakeNavbar'
-import StakingBox from 'components/StakingBox'
+// import StakingBox from 'components/StakingBox'
 import React from 'react'
 
 export default function Stake() {
