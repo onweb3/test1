@@ -88,7 +88,8 @@ const ConnectWallet = () => {
         setWalletConnectProvider(null);
       }
     }
-    disconnectWallet(); 
+    disconnectWallet();
+    window.location.reload(); // Refresh the page
   };
 
   const handleMaxButtonClick = async () => {
@@ -201,28 +202,31 @@ const ConnectWallet = () => {
         </div>
         <div className=" ">
       <div className="  rounded shadow-md">
-        <div className="flex items-center justify-center space-x-2 mb-4">
-          <button
-            className="bg-blue-500 text-white font-medium px-4 py-2 rounded-full focus:outline-none"
-            onClick={() => connectWalletManually("metamask")}
-          >
-            Connect Metamask
-          </button>
-          <button
-            className="bg-green-500 text-white font-medium px-4 py-2 rounded-full focus:outline-none"
-            onClick={() => connectWalletManually("walletconnect")}
-          >
-            Connect WalletConnect
-          </button>
-          {web3 && (
-            <button
-              className="bg-red-500 text-white font-medium px-4 py-2 rounded-full focus:outline-none"
-              onClick={disconnectWalletManually}
-            >
-              Disconnect
-            </button>
-          )}
-        </div>
+      <div className="flex items-center justify-center space-x-2 mb-4">
+  {web3 ? (
+    <button
+      className="bg-red-500 text-white font-medium px-4 py-2 rounded-full focus:outline-none"
+      onClick={disconnectWalletManually}
+    >
+      <span>{account}</span> Disconnect
+    </button>
+  ) : (
+    <>
+      <button
+        className="bg-blue-500 text-white font-medium px-4 py-2 rounded-full focus:outline-none"
+        onClick={() => connectWalletManually("metamask")}
+      >
+        Connect Metamask
+      </button>
+      <button
+        className="bg-green-500 text-white font-medium px-4 py-2 rounded-full focus:outline-none"
+        onClick={() => connectWalletManually("walletconnect")}
+      >
+        Connect WalletConnect
+      </button>
+    </>
+  )}
+</div>
       </div>
     </div>
       </div>
